@@ -7,7 +7,9 @@ const portfolioData = {
         nav_projects: "Proyectos",
         nav_skills: "Habilidades",
         status_available: "Disponible",
-        hero_text: "Soy Desarrollador de IA y Analista de Datos con sólida base en procesos ETL/ELT utilizando Python (Pandas) y bases de datos relacionales (SQL). Me especializo en la automatización de pipelines y en la transformación de datos complejos y no estructurados en información accionable.\n\nDe forma independiente, diseñé motores de extracción/digitalización documental combinando OCR con Vision-Language Models (VLMs), y construí una plataforma de noticias automatizada con web research y scraping avanzado, y verificación de IA multi-stage para fact-checking. Vengo de un trasfondo operativo en soporte IT, lo que me aportó la disciplina para armar sistemas ordenados y tolerantes a fallos. Hoy busco integrar esta base técnica con metodologías ágiles y analisis de producto, analizando data, iterando sobre prototipos y alineando el desarrollo de datos con las métricas y necesidades del negocio.",
+        hero_text: "Soy Desarrollador de IA y Analista de Datos con sólida base en procesos ETL/ELT utilizando Python (Pandas) y bases de datos relacionales (SQL). Me especializo en la automatización de pipelines y en la transformación de datos complejos y no estructurados en información accionable.
+
+\n\nDe forma independiente, diseñé motores de extracción/digitalización documental combinando OCR con Vision-Language Models (VLMs), y construí una plataforma de noticias automatizada con web research y scraping avanzado, y verificación de IA multi-stage para fact-checking. Vengo de un trasfondo operativo en soporte IT, lo que me aportó la disciplina para armar sistemas ordenados y tolerantes a fallos. Hoy busco integrar esta base técnica con metodologías ágiles y analisis de producto, analizando data, iterando sobre prototipos y alineando el desarrollo de datos con las métricas y necesidades del negocio.",
         exp_title: "Experiencia",
         exp_1_role: "Soporte Técnico de Computadoras",
         exp_1_company: "Emprendimiento Personal de Servicio de PCs",
@@ -26,14 +28,19 @@ const portfolioData = {
         exp_2_tag_3: "Electrónica",
         proj_title: "Proyectos de Software Independientes",
         proj_1_title: "Motor de Extracción Documental B2B",
-        proj_1_desc: "Diseño y construcción de una solución de software enfocada en la optimización de flujos de trabajo documentales y la resolución de ineficiencias operativas en la extracción de datos complejos en documentos ilegibles.\nDesarrollo de pipelines en Python para la extracción, limpieza y transformación de datos complejos desde documentos no estructurados hacia formatos estructurados (JSON), resolviendo ineficiencias operativas.\nMedición de calidad de extracción mediante validación de formato (JSON schema compliance), tasa de corrección manual, contrastación con modelos frontier para verificación, y KPIs como CER o WER.",
+        proj_1_desc: "Diseño y construcción de una solución de software enfocada en la optimización de flujos de trabajo documentales y la resolución de ineficiencias operativas en la extracción de datos complejos en documentos ilegibles.
+\nDesarrollo de pipelines en Python para la extracción, limpieza y transformación de datos complejos desde documentos no estructurados hacia formatos estructurados (JSON), resolviendo ineficiencias operativas.
+\nMedición de calidad de extracción mediante validación de formato (JSON schema compliance), tasa de corrección manual, contrastación con modelos frontier para verificación, y KPIs como CER o WER.",
         proj_1_tag_1: "Python",
         proj_1_tag_2: "VLMs",
         proj_1_tag_3: "OCR",
         proj_1_tag_4: "IDP",
         proj_1_tag_5: "API Orchestration",
         proj_2_title: "Plataforma de Automatización de Noticias y Fact-Checking",
-        proj_2_desc: "Arquitectura diseñada para análisis y procesamiento de información proveniente de noticias y noticieros con un fín de análisis de la veracidad, tendencias y datos económicos y políticos. Diseño de prompts y flujos conversacionales para evaluar la coherencia, veracidad y calidad de la información obtenida y de respuestas generadas LLMs. Construcción de bases de datos relacionales (PostgreSQL, Supabase) y desarrollo de pipelines de extracción de datos mediante web scraping avanzado. Realización de validaciones y cruce de datos contra fuentes externas para garantizar la precisión de la información.",
+        proj_2_desc: "Arquitectura diseñada para análisis y procesamiento de información proveniente de noticias y noticieros con un fín de análisis de la veracidad, tendencias y datos económicos y políticos. 
+Diseño de prompts y flujos conversacionales para evaluar la coherencia, veracidad y calidad de la información obtenida y de respuestas generadas LLMs. 
+Construcción de bases de datos relacionales (PostgreSQL, Supabase) y desarrollo de pipelines de extracción de datos mediante web scraping avanzado. 
+Realización de validaciones y cruce de datos contra fuentes externas para garantizar la precisión de la información.",
         proj_2_tag_1: "RAG",
         proj_2_tag_2: "API & AI Orchestration",
         proj_2_tag_3: "Deep scraping & crawling",
