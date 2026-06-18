@@ -37,10 +37,7 @@ const portfolioData = {
         proj_1_tag_4: "IDP",
         proj_1_tag_5: "API Orchestration",
         proj_2_title: "Plataforma de Automatización de Noticias y Fact-Checking",
-        proj_2_desc: "Arquitectura diseñada para análisis y procesamiento de información proveniente de noticias y noticieros con un fín de análisis de la veracidad, tendencias y datos económicos y políticos. 
-Diseño de prompts y flujos conversacionales para evaluar la coherencia, veracidad y calidad de la información obtenida y de respuestas generadas LLMs. 
-Construcción de bases de datos relacionales (PostgreSQL, Supabase) y desarrollo de pipelines de extracción de datos mediante web scraping avanzado. 
-Realización de validaciones y cruce de datos contra fuentes externas para garantizar la precisión de la información.",
+        proj_2_desc: "Arquitectura diseñada para análisis y procesamiento de información proveniente de noticias y noticieros con un fín de análisis de la veracidad, tendencias y datos económicos y políticos. \nDiseño de prompts y flujos conversacionales para evaluar la coherencia, veracidad y calidad de la información obtenida y de respuestas generadas LLMs. \nConstrucción de bases de datos relacionales (PostgreSQL, Supabase) y desarrollo de pipelines de extracción de datos mediante web scraping avanzado. \nRealización de validaciones y cruce de datos contra fuentes externas para garantizar la precisión de la información.",
         proj_2_tag_1: "RAG",
         proj_2_tag_2: "API & AI Orchestration",
         proj_2_tag_3: "Deep scraping & crawling",
