@@ -2,7 +2,7 @@ const portfolioData = {
     es: {
         name: "Jean Esteve",
         title: "AI Data Engineer | Product Management",
-        nav_about: "Acerca de",
+        nav_about: "Perfil Profesional",
         nav_experience: "Experiencia",
         nav_projects: "Proyectos",
         nav_skills: "Habilidades",
@@ -86,7 +86,7 @@ const portfolioData = {
     en: {
         name: "Jean Esteve",
         title: "AI Data Engineer | Product Management",
-        nav_about: "About",
+        nav_about: "Professional Profile",
         nav_experience: "Experience",
         nav_projects: "Projects",
         nav_skills: "Skills",
