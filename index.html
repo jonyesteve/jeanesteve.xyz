@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Esteve - Data & Prompt Engineer</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#0f172a', /* slate-900 */
+                        darkCard: '#1e293b', /* slate-800 */
+                        darkText: '#e2e8f0', /* slate-200 */
+                        darkMuted: '#94a3b8', /* slate-400 */
+                        darkBorder: '#334155', /* slate-700 */
+                        primary: '#3b82f6', /* blue-500 */
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+    
+    <!-- Language Toggle -->
+    <div class="fixed top-4 right-4 z-50 flex items-center gap-2 bg-darkCard/80 backdrop-blur-sm border border-darkBorder px-3 py-1.5 rounded-full text-sm font-medium shadow-lg">
+        <button id="btn-en" class="text-darkMuted hover:text-white transition-colors" onclick="setLanguage('en')">EN</button>
+        <span class="text-darkBorder">|</span>
+        <button id="btn-es" class="text-white transition-colors" onclick="setLanguage('es')">ES</button>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 min-h-screen flex flex-col lg:flex-row">
+        
+        <!-- Left Column (Sticky) -->
+        <header class="lg:w-[35%] lg:sticky lg:top-0 lg:max-h-screen lg:flex lg:flex-col lg:justify-between py-12 lg:py-24">
+            <div>
+                <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-3" data-i18n="name">Jean Esteve</h1>
+                <h2 class="text-xl font-medium text-darkText mb-4" data-i18n="title">Data & Prompt Engineer | Product Management</h2>
+                
+                <!-- Availability Status -->
+                <div class="flex items-center gap-2 mb-8 text-sm text-darkMuted">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <span data-i18n="status_available">Disponible</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden lg:block mt-16">
+                    <ul class="flex flex-col gap-4 text-sm font-medium text-darkMuted">
+                        <li>
+                            <a href="#about" class="group flex items-center py-2 hover:text-white transition-colors">
+                                <span class="nav-indicator mr-4 h-px w-8 bg-darkBorder transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white"></span>
+                                <span data-i18n="nav_about">Acerca de</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#experience" class="group flex items-center py-2 hover:text-white transition-colors">
+                                <span class="nav-indicator mr-4 h-px w-8 bg-darkBorder transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white"></span>
+                                <span data-i18n="nav_experience">Experiencia</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="group flex items-center py-2 hover:text-white transition-colors">
+                                <span class="nav-indicator mr-4 h-px w-8 bg-darkBorder transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white"></span>
+                                <span data-i18n="nav_projects">Proyectos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skills" class="group flex items-center py-2 hover:text-white transition-colors">
+                                <span class="nav-indicator mr-4 h-px w-8 bg-darkBorder transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white"></span>
+                                <span data-i18n="nav_skills">Habilidades</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Social Links -->
+            <ul class="flex gap-5 mt-8 lg:mt-0 text-sm font-medium text-darkMuted">
+                <li>
+                    <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/-2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        <span data-i18n="github">GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <span data-i18n="linkedin">LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:esteve.jjean@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        <span data-i18n="email">Email</span>
+                    </a>
+                </li>
+            </ul>
+        </header>
+
+        <!-- Right Column (Scrollable Content) -->
+        <main class="lg:w-[65%] lg:py-24 max-w-3xl pt-12 pb-24 flex flex-col gap-24">
+            
+            <!-- Hero / About Section -->
+            <section id="about" class="scroll-mt-24">
+                <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-darkBg/90 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:hidden">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-white" data-i18n="nav_about">Acerca de</h2>
+                </div>
+                <p class="text-lg text-darkMuted leading-relaxed" data-i18n="hero_text">
+                    Prompt Engineer y desarrollador enfocado en automatización de procesos y estructuración de datos. Me especializo en orquestar modelos de IA generativa y diseñar arquitecturas RAG para resolver cuellos de botella operativos. Mi enfoque combina rigor técnico en Python con metodologías de Product Management para construir sistemas precisos, medibles y alineados con objetivos de negocio.
+                </p>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="scroll-mt-24">
+                <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-darkBg/90 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:hidden">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-white" data-i18n="exp_title">Experiencia</h2>
+                </div>
+                
+                <ol class="flex flex-col gap-12">
+                    <!-- Experience 1 -->
+                    <li class="relative">
+                        <div class="grid grid-cols-1 sm:grid-cols-8 gap-4 sm:gap-8 items-baseline">
+                            <header class="sm:col-span-2 text-sm font-medium text-darkMuted/80 uppercase tracking-wide mt-1" data-i18n="exp_1_date">
+                                2021 – 2025
+                            </header>
+                            <div class="sm:col-span-6">
+                                <h3 class="font-semibold text-white text-lg leading-tight">
+                                    <span data-i18n="exp_1_role">Técnico de Soporte Freelance</span> · 
+                                    <span class="text-primary font-medium" data-i18n="exp_1_company">Servicios Técnicos de PC</span>
+                                </h3>
+                                <p class="mt-3 text-sm text-darkMuted leading-normal" data-i18n="exp_1_desc">
+                                    Diagnóstico y resolución de incidencias técnicas en hardware y software. Consultoría técnica personalizada y levantamiento de requerimientos.
+                                </p>
+                                <ul class="mt-4 flex flex-wrap gap-2">
+                                    <li class="flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary" data-i18n="exp_1_tag_1">Hardware</li>
+                                    <li class="flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary" data-i18n="exp_1_tag_2">Soporte L1/L2</li>
+                                    <li class="flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary" data-i18n="exp_1_tag_3">CX</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Experience 2 -->
+                    <li class="relative">
+                        <div class="grid grid-cols-1 sm:grid-cols-8 gap-4 sm:gap-8 items-baseline">
+                            <header class="sm:col-span-2 text-sm font-medium text-darkMuted/80 uppercase tracking-wide mt-1" data-i18n="exp_2_date">
+                                2022 – 2023
+                            </header>
+                            <div class="sm:col-span-6">
+                                <h3 class="font-semibold text-white text-lg leading-tight">
+                                    <span data-i18n="exp_2_role">Soldado de Soporte Técnico</span> · 
+                                    <span class="text-primary font-medium" data-i18n="exp_2_company">Ejército Argentino</span>
+                                </h3>
+                                <p class="mt-3 text-sm text-darkMuted leading-normal" data-i18n="exp_2_desc">
+                                    Asistencia técnica presencial y remota al personal interno. Participación en el diseño y ensamblaje de un simulador virtual de tanques, redactando la documentación técnica.
+                                </p>
+                                <ul class="mt-4 flex flex-wrap gap-2">
+                                    <li class="flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary" data-i18n="exp_2_tag_1">Redes</li>
+                                    <li class="flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary" data-i18n="exp_2_tag_2">Soporte Crítico</li>
+                                    <li class="flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary" data-i18n="exp_2_tag_3">Documentación</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="scroll-mt-24">
+                <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-darkBg/90 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:hidden">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-white" data-i18n="proj_title">Proyectos</h2>
+                </div>
+                
+                <div class="flex flex-col gap-6">
+                    <!-- Project 1 -->
+                    <a href="https://github.com/tu-usuario/proyecto-1" target="_blank" rel="noopener noreferrer" class="group relative block rounded-xl p-6 hover:bg-darkCard/50 border border-transparent hover:border-darkBorder/50 transition-all duration-300">
+                        <h3 class="font-semibold text-white text-lg mb-2 flex items-center gap-2 group-hover:text-primary transition-colors">
+                            <span data-i18n="proj_1_title">Motor de Extracción Documental B2B</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 -translate-y-1 translate-x-1 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-2 group-hover:-translate-y-2"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </h3>
+                        <p class="text-sm text-darkMuted leading-normal mb-4" data-i18n="proj_1_desc">
+                            Pipeline asíncrono para digitalización y estructuración de documentos legales y financieros complejos. Utiliza Vision-Language Models para procesar escaneos ruidosos. Implementa validación estricta de formato (JSON schema compliance) e iteración de prompts para optimizar la fidelidad del texto.
+                        </p>
+                        <ul class="flex flex-wrap gap-2">
+                            <li class="flex items-center rounded-full bg-darkBorder/50 px-3 py-1 text-xs font-medium text-darkText" data-i18n="proj_1_tag_1">Python</li>
+                            <li class="flex items-center rounded-full bg-darkBorder/50 px-3 py-1 text-xs font-medium text-darkText" data-i18n="proj_1_tag_2">VLMs</li>
+                            <li class="flex items-center rounded-full bg-darkBorder/50 px-3 py-1 text-xs font-medium text-darkText" data-i18n="proj_1_tag_3">OCR</li>
+                            <li class="flex items-center rounded-full bg-darkBorder/50 px-3 py-1 text-xs font-medium text-darkText" data-i18n="proj_1_tag_4">JSON</li>
+                        </ul>
+                    </a>
+
+                    <!-- Project 2 -->
+                    <a href="https://github.com/tu-usuario/proyecto-2" target="_blank" rel="noopener noreferrer" class="group relative block rounded-xl p-6 hover:bg-darkCard/50 border border-transparent hover:border-darkBorder/50 transition-all duration-300">
+                        <h3 class="font-semibold text-white text-lg mb-2 flex items-center gap-2 group-hover:text-primary transition-colors">
+                            <span data-i18n="proj_2_title">Primero Los Hechos (PLH) - Fact-Checking</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 -translate-y-1 translate-x-1 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-2 group-hover:-translate-y-2"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </h3>
+                        <p class="text-sm text-darkMuted leading-normal mb-4" data-i18n="proj_2_desc">
+                            Plataforma de auditoría fáctica. Diseñada con arquitecturas de verificación multi-paso utilizando LLMs de frontera. Integra técnicas avanzadas (CoT, ReAct) y cruce de datos para mitigar alucinaciones.
+                        </p>
+                        <ul class="flex flex-wrap gap-2">
+                            <li class="flex items-center rounded-full bg-darkBorder/50 px-3 py-1 text-xs font-medium text-darkText" data-i18n="proj_2_tag_1">RAG</li>
+                            <li class="flex items-center rounded-full bg-darkBorder/50 px-3 py-1 text-xs font-medium text-darkText" data-i18n="proj_2_tag_2">Prompt Engineering</li>
+                            <li class="flex items-center rounded-full bg-darkBorder/50 px-3 py-1 text-xs font-medium text-darkText" data-i18n="proj_2_tag_3">Scraping</li>
+                            <li class="flex items-center rounded-full bg-darkBorder/50 px-3 py-1 text-xs font-medium text-darkText" data-i18n="proj_2_tag_4">SQL</li>
+                        </ul>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="scroll-mt-24">
+                <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-darkBg/90 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:hidden">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-white" data-i18n="skills_title">Habilidades</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <!-- Skill Category 1 -->
+                    <div>
+                        <h3 class="text-white font-medium mb-4" data-i18n="skill_cat_1">IA & Datos</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_1_1">Prompt Engineering</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_1_2">RAG</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_1_3">LLMs</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_1_4">VLMs</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_1_5">Python</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_1_6">SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Category 2 -->
+                    <div>
+                        <h3 class="text-white font-medium mb-4" data-i18n="skill_cat_2">Metodologías & Procesos</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_2_1">Product Management</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_2_2">Automatización</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_2_3">ETL</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_2_4">Scraping</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_2_5">Documentación</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Category 3 -->
+                    <div class="sm:col-span-2">
+                        <h3 class="text-white font-medium mb-4" data-i18n="skill_cat_3">Soporte & IT</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_3_1">Hardware</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_3_2">Redes</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_3_3">Soporte L1/L2</span>
+                            <span class="rounded-full bg-darkCard border border-darkBorder px-3 py-1 text-sm text-darkText" data-i18n="skill_3_4">Sistemas Operativos</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="mt-12 text-center sm:text-left bg-darkCard/30 rounded-2xl p-8 border border-darkBorder/50">
+                <h2 class="text-2xl font-bold text-white mb-6" data-i18n="cta_title">¿Hablamos? Estoy abierto a nuevas oportunidades.</h2>
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center sm:items-start text-darkMuted">
+                    <a href="mailto:esteve.jjean@gmail.com" class="flex items-center gap-2 hover:text-primary transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        esteve.jjean@gmail.com
+                    </a>
+                    <a href="tel:+541133423119" class="flex items-center gap-2 hover:text-primary transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        +54 11 3342-3119
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Script para Internacionalización (i18n) -->
+    <script src="data.js"></script>
+    <script>
+        let currentLang = 'es';
+
+        function setLanguage(lang) {
+            if (!portfolioData[lang]) return;
+            currentLang = lang;
+            
+            // Actualizar botones UI
+            if(lang === 'es') {
+                document.getElementById('btn-es').classList.replace('text-darkMuted', 'text-white');
+                document.getElementById('btn-en').classList.replace('text-white', 'text-darkMuted');
+                document.documentElement.lang = 'es';
+            } else {
+                document.getElementById('btn-en').classList.replace('text-darkMuted', 'text-white');
+                document.getElementById('btn-es').classList.replace('text-white', 'text-darkMuted');
+                document.documentElement.lang = 'en';
+            }
+
+            // Actualizar textos
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (portfolioData[lang][key]) {
+                    // Solo reemplazar el texto, no los SVGs u otros hijos si se hace correctamente, 
+                    // pero para mantenerlo simple y seguro asumiendo la estructura:
+                    if (el.children.length === 0 || el.tagName === 'SPAN') {
+                        el.textContent = portfolioData[lang][key];
+                    } else {
+                        // Para nodos con hijos (como los enlaces sociales que tienen un svg y un span), 
+                        // nos aseguramos de poner el span explícito.
+                        // Arreglado usando spans explícitos para el texto en el HTML.
+                        el.textContent = portfolioData[lang][key];
+                    }
+                }
+            });
+        }
+
+        // Active section logic for navigation
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px', // Activar cuando pasa por el medio de la pantalla
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Eliminar activo de todos
+                    document.querySelectorAll('nav a').forEach(a => {
+                        a.classList.remove('text-white');
+                        a.classList.add('text-darkMuted');
+                        const indicator = a.querySelector('.nav-indicator');
+                        if(indicator) {
+                            indicator.classList.remove('w-16', 'bg-white');
+                            indicator.classList.add('w-8', 'bg-darkBorder');
+                        }
+                    });
+                    
+                    // Añadir activo al correspondiente
+                    const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.remove('text-darkMuted');
+                        activeLink.classList.add('text-white');
+                        const indicator = activeLink.querySelector('.nav-indicator');
+                        if(indicator) {
+                            indicator.classList.remove('w-8', 'bg-darkBorder');
+                            indicator.classList.add('w-16', 'bg-white');
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Initialize default lang
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+        });
+    </script>
+</body>
+</html>
