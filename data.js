@@ -93,14 +93,14 @@ const portfolioData = {
         github: "GitHub",
         linkedin: "LinkedIn",
         email: "Email",
-        link_github: "https://github.com/tu-usuario",
-        link_linkedin: "https://linkedin.com/in/tu-usuario",
+        link_github: "https://github.com/jonyesteve",
+        link_linkedin: "https://linkedin.com/in/jean-esteve",
         link_email: "mailto:esteve.jjean@gmail.com",
         text_email: "esteve.jjean@gmail.com",
         link_phone: "tel:+541133423119",
         text_phone: "+54 11 3342-3119",
-        link_proj_1: "https://github.com/tu-usuario/proyecto-1",
-        link_proj_2: "https://github.com/tu-usuario/proyecto-2"
+        link_proj_1: "https://github.com/jonyesteve/pyprojects/tree/main/Noti_IA_ALPHA_2",
+        link_proj_2: "https://github.com/jonyesteve/pyprojects/tree/main/pdfproject"
     },
     en: {
         name: "Jean Esteve",
