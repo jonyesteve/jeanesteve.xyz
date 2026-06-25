@@ -345,7 +345,7 @@
     </div>
 
     <!-- Script para Internacionalización (i18n) -->
-    <script src="data.js"></script>
+    <script src="data.js?v=1.1"></script>
     <script>
         let currentLang = 'es';
 
@@ -373,10 +373,13 @@
             linkElements.forEach(el => {
                 const key = el.getAttribute('data-href-i18n');
                 if (portfolioData[lang][key]) {
-                    el.href = portfolioData[lang][key];
+                    el.setAttribute('href', portfolioData[lang][key]);
                     el.style.display = ''; // Mostrar si estaba oculto
                 } else {
-                    el.style.display = 'none'; // Ocultar si no hay link
+                    el.removeAttribute('href');
+                    if (!key.startsWith('link_proj')) {
+                        el.style.display = 'none'; // Ocultar si no hay link (excepto en proyectos para no romper la UI)
+                    }
                 }
             });
 
