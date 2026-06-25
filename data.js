@@ -7,7 +7,7 @@ const portfolioData = {
         nav_projects: "Proyectos",
         nav_skills: "Habilidades",
         status_available: "Disponible",
-        hero_text: "Soy Desarrollador de IA y Analista de Datos con sólida base en procesos ETL/ELT utilizando Python (Pandas) y bases de datos relacionales (SQL), y diplomado en Product Management. Me especializo en la automatización de pipelines y en la transformación de datos complejos y no estructurados en información accionable.\n\nDe forma independiente, diseñé motores de extracción/digitalización documental combinando OCR con Vision-Language Models (VLMs), y construí una plataforma de noticias automatizada con web research y scraping avanzado, y verificación de IA multi-stage para fact-checking. Vengo de un trasfondo operativo en soporte IT, lo que me aportó la disciplina para armar sistemas ordenados y tolerantes a fallos. Hoy busco integrar esta base técnica con metodologías ágiles y analisis de producto, analizando data, iterando sobre prototipos y alineando el desarrollo de datos con las métricas y necesidades del negocio.",
+        hero_text: "Soy Desarrollador de IA y Analista de Datos con sólida base en procesos ETL/ELT utilizando Python (Pandas) y bases de datos relacionales (SQL), y diplomado en Product Management. Trabajé con automatización de pipelines y en la transformación de datos complejos y no estructurados en información accionable.\n\nDe forma independiente, diseñé motores de extracción/digitalización documental combinando OCR con Vision-Language Models (VLMs), y construí una plataforma de noticias automatizada con web research y scraping avanzado, y verificación de IA multi-stage para fact-checking. Vengo de un trasfondo operativo en soporte IT, lo que me aportó la disciplina para armar sistemas ordenados y tolerantes a fallos. Hoy busco integrar esta base técnica con metodologías ágiles y analisis de producto, analizando data, iterando sobre prototipos y alineando el desarrollo de datos con las métricas y necesidades del negocio.",
         exp_title: "Experiencia",
         exp_1_role: "Soporte Técnico de Computadoras",
         exp_1_company: "Emprendimiento Personal de Servicio de PCs",
@@ -92,7 +92,15 @@ const portfolioData = {
         cta_title: "¿Hablamos? Estoy abierto a nuevas oportunidades. Cualquier consulta, no dudes en contactarme.",
         github: "GitHub",
         linkedin: "LinkedIn",
-        email: "Email"
+        email: "Email",
+        link_github: "https://github.com/tu-usuario",
+        link_linkedin: "https://linkedin.com/in/tu-usuario",
+        link_email: "mailto:esteve.jjean@gmail.com",
+        text_email: "esteve.jjean@gmail.com",
+        link_phone: "tel:+541133423119",
+        text_phone: "+54 11 3342-3119",
+        link_proj_1: "https://github.com/tu-usuario/proyecto-1",
+        link_proj_2: "https://github.com/tu-usuario/proyecto-2"
     },
     en: {
         name: "Jean Esteve",
@@ -102,7 +110,7 @@ const portfolioData = {
         nav_projects: "Projects",
         nav_skills: "Skills",
         status_available: "Available",
-        hero_text: "I am an AI Developer and Data Analyst with a solid foundation in ETL/ELT processes using Python (Pandas) and relational databases (SQL), and I hold a diploma in Product Management. I specialize in pipeline automation and transforming complex, unstructured data into actionable insights.\n\nIndependently, I designed document extraction/digitization engines combining OCR with Vision-Language Models (VLMs), and built an automated news platform using web research, advanced scraping, and multi-stage AI verification for fact-checking. I come from an operational background in IT support, which gave me the discipline to build orderly and fault-tolerant systems. Today, I seek to integrate this technical foundation with agile methodologies and product analysis—analyzing data, iterating on prototypes, and aligning data development with business metrics and needs.",
+        hero_text: "I am an AI Developer and Data Analyst with a solid foundation in ETL/ELT processes using Python (Pandas) and relational databases (SQL), and I hold a diploma in Product Management. I specialize in pipeline automation and transforming complex, unstructured data into actionable insights.\n\nIndependently, I designed document extraction/digitization engines combining OCR with Vision-Language Models (VLMs), and built an automated news platform using web research, advanced scraping, and multi-stage AI verification for fact-checking. I come from an operational background in IT support, which gave me the discipline to build orderly and fault-tolerant systems. Today, I seek to integrate this technical foundation with agile methodologies and product analysis - analyzing data, iterating on prototypes, and aligning data development with business metrics and needs.",
         exp_title: "Experience",
         exp_1_role: "Computer Technical Support",
         exp_1_company: "Freelance PC Service Business",
@@ -187,7 +195,15 @@ const portfolioData = {
         cta_title: "Shall we talk? I am open to new opportunities. For any inquiries, feel free to contact me.",
         github: "GitHub",
         linkedin: "LinkedIn",
-        email: "Email"
+        email: "Email",
+        link_github: "https://github.com/jonyesteve",
+        link_linkedin: "https://linkedin.com/in/jean-esteve",
+        link_email: "mailto:esteve.jjean@gmail.com",
+        text_email: "esteve.jjean@gmail.com",
+        link_phone: "tel:+541133423119",
+        text_phone: "+54 11 3342-3119",
+        link_proj_1: "https://github.com/jonyesteve/pyprojects/tree/main/Noti_IA_ALPHA_2",
+        link_proj_2: "https://github.com/jonyesteve/pyprojects/tree/main/pdfproject"
     }
 };
 
